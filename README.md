@@ -41,7 +41,7 @@ Current version is 2.0.0
 
 ## Authors
 
-*** Daniel Raouf Tadros https://www.linkedin.com/in/daniel-raouf/
+-Daniel Raouf Tadros https://www.linkedin.com/in/daniel-raouf/
 
 ## License
 
