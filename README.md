@@ -16,16 +16,16 @@ To install run
     // then inside your component use
     const { data } = usePusher({
         event: {
-        name: '<Your event name >',
-        channel: '<Your channel name>'
+            name: '<Your event name >',
+            channel: '<Your channel name>'
         },
         config: {
-        key: '<Your pusher app key>',
-        cluster: '<Your pusher app cluster>'
+            key: '<Your pusher app key>',
+            cluster: '<Your pusher app cluster>'
         }
     });
 
-    //the data will contain the data sent so you can use it within your component
+    // the data will contain the data sent so you can use it within your component
 
 ## Contributing
 
