@@ -1,0 +1,36 @@
+{
+  "name": "@hooksplace/pusher",
+  "version": "2.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "./build/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./dist/socket.io.js": "./dist/socket.io.js",
+    "./dist/socket.io.js.map": "./dist/socket.io.js.map",
+    ".": {
+      "require": "./build/index.js"
+    }
+  },
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "compile": "tsc",
+    "test": "npm run format:check && npm run compile && if test \"$BROWSERS\" = \"1\" ; then npm run test:browser; else npm run test:node; fi",
+    "test:node": "mocha --require ts-node/register --reporter dot --require test/support/server.js test/index.js",
+    "test:browser": "zuul test/index.js",
+    "build": "npm run compile && webpack --config ./support/webpack.config.js --config ./support/prod.config.js --config ./support/msgpack-parser.config.js",
+    "format:check": "prettier --check \"lib/**/*.ts\" \"test/**/*.js\" \"test/**/*.ts\" \"support/**/*.js\"",
+    "format:fix": "prettier --write \"lib/**/*.ts\" \"test/**/*.js\" \"test/**/*.ts\" \"support/**/*.js\"",
+    "prepack": "npm run compile"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "pusher-js": "^7.0.2",
+    "react": "^17.0.1"
+  }
+}
